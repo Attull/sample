@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>apwrims</title>
+    <script src="https://kit.fontawesome.com/27609803cc.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta http-equiv="Refresh" content="2; url=public/main_page.html" />
+</head>
+<body>
+    <div class="header">
+        <nav>
+          <div class="logo">
+            <i class="fa-solid fa-bars"></i>
+            <img src="images/homepage-logo.png" class="logo1"> 
+          </div>
+          <div class="image"> 
+              <img src="images/NHP_LOGO.png" class="logo2">
+              <p>Developed & Maintained under<br>
+                    National Hydrology Project</p>
+          </div>
+          <div class="middle">
+              <p>Water Available Across States</p>
+          </div>
+          <div class="list">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    
+                        <div class="dropdown">
+                            <button onclick="myfunction" class="dropbtn">WRIS 
+                              <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div id="submenu" class="dropdown-content">
+                              <a href="#">Reservoirs</a>
+                              <a href="#">MI Tanks</a>
+                              <a href="#">Ground Water</a>
+                              <a href="#">Rain Water</a>
+                            </div>
+                          </div> 
+                    <li><a href="#">WRMS</a></li>
+
+                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-unlock-keyhole"></i>&nbsp;Login</a></li>
+                </ul>
+          </div>
+        </nav>
+    </div>
+    <div class="card-container">
+       <div class="b1">
+          <div class="top_row">
+            <div class="title">
+              Rainfall
+            </div>
+            <div class="title">
+              <div class="card-content">
+                <div class="heading-icon">
+                  <div style="padding-top:5px;">
+                    <img src="images/home-reservoir-icon.svg" height="23px" width="23px">
+                  </div>
+                  <h4 style="margin-left: 10px;"><b>Reservoirs</b></h4>
+                </div>
+                <div class="content">
+                  <div >Storage</div>
+                  <div style="font-size: 20px;">824.51 T.M.C</div>
+                  <div >No. of Reservoir : 108</div>
+                </div>
+                <div class="chart-container">
+                  <canvas id="myChart" width="20px" height="20px"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="title">Minor irrigation Tanks</div>
+          </div>
+          <div class="bottom_row">
+            <div class="title">Ground Water</div>
+            <div class="title">Soil Moisture</div>
+            <div class="title">WC Structures</div>
+          </div>
+       </div>
+       <div class="b2">
+
+       </div> 
+
+    </div>
+
+    <div class="footer">
+         <p>	&copy; 2022 APWRD. <br> All Rights Reserved</p>
+         <img src="images/nhp-logo-homepage.png" class="f1">
+         <img src="images/apwaterblackfinal.png" class="f2"> 
+         <img src="images/isro-logo.png" class="f3">
+         <img src="images/departement-logo.png" class="f4">
+         <img src="images/footer-logo.png" class="f5">
+
+    </div>
+
+    <script>
+      const ctx = document.getElementById('myChart').getContext('2d');
+      const myChart = new Chart(ctx, {
+          type: 'doughnut',
+          data:  {
+          labels: [
+            'Filled',
+            'Empty',
+          ],
+          datasets: [{
+            label: 'My First Dataset',
+            data: [(838/10), (162/10)],
+            backgroundColor: [
+              '#147AD6',  
+              '#CFD8DC'
+            ],
+            hoverOffset: 4
+          }]
+        },
+        options: {
+          plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    color: 'rgb(255, 99, 132)'
+                },
+                position:'bottom'
+            }
+          }
+        }
+      });
+    </script>
+    <!-- <script>
+       const ctx = document.getElementById('myChart').getContext('2d');
+      const myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+          labels: ['a','b','c','d','e','f'],
+          datasets: [{
+            label: 'My First Dataset',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 205, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(201, 203, 207, 0.2)'
+            ],
+            borderColor: [
+              'rgb(255, 99, 132)',
+              'rgb(255, 159, 64)',
+              'rgb(255, 205, 86)',
+              'rgb(75, 192, 192)',
+              'rgb(54, 162, 235)',
+              'rgb(153, 102, 255)',
+              'rgb(201, 203, 207)'
+            ],
+            borderWidth: 1
+          }]
+      }
+    }) -->
+    
+    </script>
+</body>
+</html>
